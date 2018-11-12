@@ -1,0 +1,88 @@
+﻿body {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Card_back_15.svg/527px-Card_back_15.svg.png);
+    background-repeat: repeat;
+    background-size: 5vw;
+}
+
+header {
+    background-color: #1A535C;
+    color: white;
+    }
+
+ul li a{
+    color:whitesmoke;
+    list-style:georgian;
+}
+header, footer {
+    border: 5px groove #FF6B6B;
+}
+
+main {
+    background-color: #4ECDC4;
+    color: white;    
+}
+
+    main div {
+        font-family: 'Indie Flower', cursive;
+        font-size: 15px;
+        position: absolute;
+        margin: 25px;
+        background-color: #FFE66D;
+        padding: 15px;
+    }
+
+.card {
+    position:relative;
+    width: 10vw;
+    margin:auto;
+    display:block;
+}
+
+#computer,
+#player {
+    top: 250px;
+    background-color:#FF6B6B;
+}
+
+#deck {
+    left: 5vw;
+}
+
+#computer {
+    left: 20vw;
+}
+
+#player {
+    left: 45vw;
+}
+
+#discard{
+    left:75vw;
+}
+
+main div p {
+    margin-top: 10px;
+    background-color: darkblue;
+    padding: 5px;
+    text-align: center
+}
+
+footer {
+    width:100%;
+    background-color: #F7FFF7;
+    position:absolute;
+    bottom: 0;
+}
+
+.score{
+    font-style:italic;
+}
+
+time {
+    text-decoration: underline #FFE66D wavy;
+    border: 2px dotted orange;
+}
+
+table, thead, thead td{
+    border: 1px solid black;
+}
