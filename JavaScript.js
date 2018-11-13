@@ -55,16 +55,59 @@ let dealtCards = Deal(deck);
 console.log(dealtCards);
 
 
-function ComputerDrawsCard(allComputerCards) {
-    return allComputerCards.pop();
+let theGame = {
+    score: 0,
+    currentComputerCard: undefined,
+    ComputerDrawsCard: function (allComputerCards, cardDrawnFunction) {
+        setTimeout(function () {
+
+            let theCard = allComputerCards.pop();
+
+            cardDrawnFunction(theCard);
+
+        }, 1500);
+    }
+};
+
+function PlayerDrawsCard(allPlayerCards, playerDrawFunction) {
+    setTimeout(function () {
+        let playerCard = allPlayerCards.pop();
+        playerDrawFunction(playerCard);
+    }, 2500);
 }
 
-let theComputerCard = ComputerDrawsCard(dealtCards.computerCards);
+theGame.ComputerDrawsCard(
+    dealtCards.computerCards,
+    function (theCard) {
+        console.log('this is where the computer card shows up!!! ' + theCard);
+        theGame.currentComputerCard = theCard;
+    });
 
-function PlayerDrawsCard(allPlayerCards) {
-    return allPlayerCards.pop();
+PlayerDrawsCard(
+    dealtCards.playerCards,
+    function (theCard) {
+        console.log('this is where the player card shows up!!! ' + theCard);
+        theGame.score += ScoreCards(theCard, gameState.currentComputerCard);
+        console.log(gameState.score);
+    });
+
+
+
+function ScoreCards(card1, card2) {
+    let value1 = card1.charAt(0);
+    let suit1 = card1.charAt(1);
+
+    let value2 = card2.charAt(0);
+    let suit2 = card2.charAt(1);
+
+    if (value1 === value2 || suit1 === suit2) return 1;
+    else return -1;
 }
 
+
+
+
+/*
 let thePlayerCard = PlayerDrawsCard(dealtCards.playerCards);
 
 
@@ -103,3 +146,4 @@ for (var i = 0; i < 4; i++) {
 
 
 
+*/
